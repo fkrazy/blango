@@ -33,7 +33,7 @@ class Dev(Configuration):
 
     ALLOWED_HOSTS = values.ListValue(["localhost", "0.0.0.0", ".codio.io"])
 
-
+    AUTH_USER_MODEL = "blango_auth.User" 
     # Application definition
 
     INSTALLED_APPS = [
@@ -43,10 +43,11 @@ class Dev(Configuration):
         'django.contrib.sessions',
         'django.contrib.messages',
         'django.contrib.staticfiles',
+        "blango_auth",
         "blog",
         "crispy_forms",
         "crispy_bootstrap5",
-        "debug_toolbar"
+        "debug_toolbar",
     ]
 
     MIDDLEWARE = [
